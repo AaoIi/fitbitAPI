@@ -28,8 +28,11 @@ extension AuthHandlerType {
                    callbackScheme: String,
                    completion: @escaping FitBitAuth.CompletionHandler) {
 
+
+
+
     if #available(iOS 12, *) {
-      let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackScheme) {
+      let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackScheme.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)) {
         url, error in
 
         if #available(iOS 13, *) {
