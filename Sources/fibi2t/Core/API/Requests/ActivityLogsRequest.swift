@@ -19,7 +19,7 @@ final class ActivityLogsRequest: FitBitRequest<FitBitActivityLogs, FitBitError> 
 
   override var endPointResources: [FitBitAPI.ResourceValuePair]? {
     [
-      ("<DAY>", date.toString(.yyyyMMdd))
+      ("<START-DAY>", date.toString(.yyyyMMdd))
     ]
   }
 
