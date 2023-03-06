@@ -26,9 +26,9 @@ public final class HeartRateReport: Codable {
 }
 
 // MARK: - ActivitiesHeart
-class ActivitiesHeart: Codable {
-    let dateTime: String?
-    let value: Value?
+public class ActivitiesHeart: Codable {
+    public let dateTime: String?
+    public let value: Value?
 
     init(dateTime: String?, value: Value?) {
         self.dateTime = dateTime
@@ -37,9 +37,9 @@ class ActivitiesHeart: Codable {
 }
 
 // MARK: - Value
-class Value: Codable {
-    let customHeartRateZones, heartRateZones: [HeartRateZone]?
-    let restingHeartRate: Int?
+public class Value: Codable {
+    public let customHeartRateZones, heartRateZones: [HeartRateZone]?
+    public let restingHeartRate: Int?
 
     init(customHeartRateZones: [HeartRateZone]?, heartRateZones: [HeartRateZone]?, restingHeartRate: Int?) {
         self.customHeartRateZones = customHeartRateZones
@@ -49,10 +49,10 @@ class Value: Codable {
 }
 
 // MARK: - HeartRateZone
-class HeartRateZone: Codable {
-    let caloriesOut: Double?
-    let max, min, minutes: Int?
-    let name: String?
+public class HeartRateZone: Codable {
+    public let caloriesOut: Double?
+    public let max, min, minutes: Int?
+    public let name: String?
 
     init(caloriesOut: Double?, max: Int?, min: Int?, minutes: Int?, name: String?) {
         self.caloriesOut = caloriesOut

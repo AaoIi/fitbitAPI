@@ -100,51 +100,42 @@ public final class FitBitDailyActivities: Codable {
 
 public final class FitBitActivity: Codable {
 
-  public let activityId: Int
-  public let activityParentId: Int
-  public let activityParentName: String
-  public let calories: Int
-  public let activityDescription: String
-  public let distance: Int?
-  public let duration: Int?
-  public let hasActiveZoneMinutes: Bool
-  public let hasStartTime: Bool
-  public let isFavorite: Bool
-  public let lastModified: String
-  public let logId: Int
-  public let name: String
-  public let startDate: String
-  public let startTime: String
-  public let steps: Int?
+    public let activityId, activityParentId: Int?
+    public let activityParentName: String?
+    public let calories: Int?
+    public let description: String?
+    public let distance: Double?
+    public let duration: Int?
+    public let hasActiveZoneMinutes, hasStartTime, isFavorite: Bool?
+    public let lastModified: String?
+    public let logId: Int?
+    public let name, startDate, startTime: String?
+    public let steps: Int?
 }
 
 public final class FitBitGoals: Codable {
 
-  public let activeMinutes: Int
-  public let caloriesOut: Int?
-  public let distance: Double?
-  public let steps: Int?
+    let activeMinutes, caloriesOut: Int?
+    let distance: Double?
+    let steps: Int?
 }
 
 public final class FitBitActivitiesSummary: Codable {
-
-  public let activeScore: Int
-  public let activityCalories: Int
-  public let caloriesBMR: Int
-  public let caloriesOut: Int?
-  public let distances: [FitBitDistanceActivity]?
-  public let fairlyActiveMinutes: Int
-  public let lightlyActiveMinutes: Int
-  public let marginalCalories: Int
-  public let sedentaryMinutes: Int
-  public let steps: Int?
-  public let veryActiveMinutes: Int
-  public let floors: Int?
-  public let elevation: Int?
+    
+    public let activeScore, activityCalories, caloriesBMR, caloriesOut: Int?
+    public let distances: [FitBitDistanceActivity]?
+    public let fairlyActiveMinutes: Int?
+    public let heartRateZones: [HeartRateZone]?
+    public let lightlyActiveMinutes, marginalCalories, sedentaryMinutes, steps: Int?
+    public let veryActiveMinutes: Int?
+    public let floors: Int?
+    public let elevation: Int?
+    
 }
 
 public final class FitBitDistanceActivity: Codable {
 
-  public let activity: String
-  public let distance: Int?
+    public let activity: String?
+    public let distance: Double?
+
 }
