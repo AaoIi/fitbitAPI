@@ -115,9 +115,9 @@ public final class FitBitActivity: Codable {
 
 public final class FitBitGoals: Codable {
 
-    let activeMinutes, caloriesOut: Int?
-    let distance: Double?
-    let steps: Int?
+    public let activeMinutes, caloriesOut: Int?
+    public let distance: Double?
+    public let steps: Int?
 }
 
 public final class FitBitActivitiesSummary: Codable {

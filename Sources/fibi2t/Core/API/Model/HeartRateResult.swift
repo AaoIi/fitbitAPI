@@ -18,7 +18,7 @@ public class HeartRateResult: Codable {
 
 // MARK: - HeartRateResponse
 public final class HeartRateReport: Codable {
-    let activitiesHeart: [ActivitiesHeart]?
+    public let activitiesHeart: [ActivitiesHeart]?
 
     enum CodingKeys: String, CodingKey {
         case activitiesHeart = "activities-heart"
