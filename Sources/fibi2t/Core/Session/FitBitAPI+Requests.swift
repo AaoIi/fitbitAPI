@@ -25,6 +25,14 @@ public extension FitBitAPI {
     execute(requestToExecute, completion: completion)
   }
     
+    // MARK: - Activity Loggs
+    
+    func fetchUserActivitiesLoggs(_ date: Date,
+                                         completion: @escaping FitBitAPI.CompletionHandler<FitBitActivityLogs, FitBitError>) {
+      let requestToExecute = ActivityLogsRequest(date: date)
+      execute(requestToExecute, completion: completion)
+    }
+    
   // MARK: - Heart Rate
     
   func fetchHeartRate(_ fromDate: Date,

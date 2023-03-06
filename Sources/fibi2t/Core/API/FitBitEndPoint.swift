@@ -113,7 +113,15 @@ enum FitBitEndPoint {
           /// GET
           ///
           static let heartrate: String = "/1/user/-/activities/heart/date/<START-DAY>/<END-DAY>.json"
-
+          
+          ///
+          /// Return user heart rate for selected day's range
+          ///
+          ///
+          /// GET
+          ///
+          static let activityLogs: String = "/1/user/-/activities/activities/list.json?afterDate=<START-DAY>?offset=0&limit=100&sort=asc"
+          
         ///
         /// Return user calories activities for selected day's range
         ///

@@ -111,6 +111,7 @@ public final class FitBitActivity: Codable {
     public let logId: Int?
     public let name, startDate, startTime: String?
     public let steps: Int?
+    
 }
 
 public final class FitBitGoals: Codable {
