@@ -24,6 +24,16 @@ public extension FitBitAPI {
     let requestToExecute = DailyActivitiesRequest(date: date)
     execute(requestToExecute, completion: completion)
   }
+    
+  // MARK: - Heart Rate
+    
+  func fetchHeartRate(_ fromDate: Date,
+                      toDate: Date,
+                      completion: @escaping FitBitAPI.CompletionHandler<FitBitHeartRateResult, FitBitError>){
+      let requestToExecute = HearRateReportRequest(fromDate: fromDate, toDate: toDate)
+      execute(requestToExecute, completion: completion)
+  }
+
 
   // MARK: - Steps
 
