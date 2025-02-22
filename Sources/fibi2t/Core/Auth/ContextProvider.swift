@@ -20,21 +20,21 @@ public protocol AuthContextProvider where Self: ASWebAuthenticationPresentationC
 extension ContextProvider: AuthContextProvider {
 
   public func clear() {
-    context = nil
+    // No need to clear context as we're using the app's main window
   }
 }
 
 @available(iOS 12.0, *)
 final class ContextProvider: NSObject {
 
-  private var context: ASPresentationAnchor?
-
   // MARK: - ASWebAuthenticationPresentationContextProviding
 
   public func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
-    let window = UIWindow()
-    window.makeKeyAndVisible()
-    self.context = window
-    return window
+    // Get the app's key window
+    if let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }) {
+      return window
+    }
+    // Fallback to first window if no key window
+    return UIApplication.shared.windows.first ?? ASPresentationAnchor()
   }
 }
