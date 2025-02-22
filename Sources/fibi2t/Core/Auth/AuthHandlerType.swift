@@ -28,7 +28,10 @@ extension AuthHandlerType {
                    callbackScheme: String,
                    completion: @escaping FitBitAuth.CompletionHandler) {
     if #available(iOS 12, *) {
-      let session = ASWebAuthenticationSession(url: url, callbackURLScheme: callbackScheme) { [weak self] url, error in
+      // Get the base scheme without :// for ASWebAuthenticationSession
+      let baseScheme = callbackScheme.replacingOccurrences(of: "://", with: "")
+      
+      let session = ASWebAuthenticationSession(url: url, callbackURLScheme: baseScheme) { [weak self] url, error in
         defer {
           // Clean up
           self?.session = nil
@@ -65,7 +68,10 @@ extension AuthHandlerType {
 
       session.start()
     } else {
-      let session = SFAuthenticationSession(url: url, callbackURLScheme: callbackScheme) { [weak self] url, error in
+      // Get the base scheme without :// for SFAuthenticationSession
+      let baseScheme = callbackScheme.replacingOccurrences(of: "://", with: "")
+      
+      let session = SFAuthenticationSession(url: url, callbackURLScheme: baseScheme) { [weak self] url, error in
         defer {
           self?.session = nil
         }
